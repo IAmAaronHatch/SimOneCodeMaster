@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios'
+import { Link } from 'react-router-dom'
 
 class Form extends Component {
     constructor(props) {
@@ -40,12 +41,15 @@ class Form extends Component {
     }
 
 
-
     addProduct = () => {
         const { image, name, price } = this.state
         const newProduct = { image, name, price }
-        axios.post('/api/students', newProduct).then(results => {
-            this.props.updateInventory()
+        axios.post('/api/inventory', newProduct).then(results => {
+            this.setState({
+                inventory: results.data
+            })
+            this.handleCancel()
+            
         })
     }
 
@@ -57,9 +61,8 @@ class Form extends Component {
         })
     }
 
-
     render() {
-        console.log('1111212121212112', this.props)
+        // console.log('1111212121212112', this.props)
         return (
             <div>
                 FORM!!!
@@ -81,6 +84,8 @@ class Form extends Component {
                 >Cancel</button>
 
                 <button onClick={this.addProduct}>Add to Inventory</button>
+                
+                
             </div>
         )
     }

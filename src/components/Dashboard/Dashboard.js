@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 // import axios from 'axios'
 import Product from '../Product/Product'
+import { Link } from 'react-router-dom'
 
 class Dashboard extends Component {
     render() {
@@ -19,7 +20,13 @@ class Dashboard extends Component {
         return (
             <div>
                 <p>Dashboard!</p>
+
                 {mappedInventory}
+
+
+
+                <Link to='/form'><button>To Form</button></Link>
+                <Link to='/'><button>Home</button></Link>
             </div>
         )
     }
