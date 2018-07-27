@@ -23,8 +23,8 @@ class App extends Component {
     })
   }
 
-  updateInventory=(inventory)=>{
-    this.setState({inventory})
+  updateInventory = (inventory) => {
+    this.setState({ inventory })
   }
 
 
@@ -34,10 +34,10 @@ class App extends Component {
       <div className="App">
         <Header />
         <Form get={this.componentDidMount}
-        updateInventory={this.state.updateInventory}
+          updateInventory={this.state.updateInventory}
         />
-        <Dashboard inventory={this.state.inventory} 
-        get={this.componentDidMount} 
+        <Dashboard inventory={this.state.inventory}
+          get={this.componentDidMount}
         />
 
       </div>

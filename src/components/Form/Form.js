@@ -39,14 +39,14 @@ class Form extends Component {
         })
     }
 
-    
+
 
     addProduct = () => {
-       const {image, name, price} = this.state
-       const newProduct = {image, name, price}
-       axios.post('/api/students', newProduct).then(results => {
-           this.props.updateInventory()
-       })
+        const { image, name, price } = this.state
+        const newProduct = { image, name, price }
+        axios.post('/api/students', newProduct).then(results => {
+            this.props.updateInventory()
+        })
     }
 
     handleCancel = (e) => {

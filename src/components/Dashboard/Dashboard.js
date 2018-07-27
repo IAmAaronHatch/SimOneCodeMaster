@@ -4,15 +4,15 @@ import Product from '../Product/Product'
 
 class Dashboard extends Component {
     render() {
-        let mappedInventory = this.props.inventory.map( (e, i) => {
+        let mappedInventory = this.props.inventory.map((e, i) => {
             return (
                 <div key={i}>
-                    <Product 
+                    <Product
                         id={e.id}
                         name={e.name}
                         price={e.price}
                         image={e.image}
-                        />
+                    />
                 </div>
             )
         })
