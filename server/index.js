@@ -12,7 +12,6 @@ massive ( process.env.CONNECTION_STRING ).then( db => {
     app.set('db', db)
 }).catch( err => console.log(err) )
 
-//const  = require('./')
 
 app.get('/api/inventory', controller.getProducts )
 app.post('/api/inventory', controller.addProducts )

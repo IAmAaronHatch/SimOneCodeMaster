@@ -6,42 +6,40 @@ import Form from './components/Form/Form'
 import Header from './components/Header/Header'
 
 class App extends Component {
-  constructor() {
-    super()
+  constructor(props) {
+    super(props)
 
     this.state = {
       inventory: [
         {
-          image: "yes",
+          image: 'yes',
           name: "fake",
-          price: 3,
+          price: 3
         }
       ]
     }
   }
 
-  componentDidMount() {
-    axios.get('/api/inventory').then(results => {
-      this.setState({
-        inventory: results.data
-      })
-    })
-  }
-
-  // updateInventory = (inventory) => {
-  //   this.setState({ inventory })
+  // componentDidMount() {
+  //   axios.get('/api/inventory').then(results => {
+  //     this.setState({
+  //       inventory: results.data
+  //     })
+  //   })
   // }
 
 
   render() {
-    // let inventoryMap = this.state.inventory.map(inv => {
-    //   return <Dashboard updateInventory={this.updateInventory} inv={inv} />
-    // })
+
     return (
       <div className="App">
-        <Dashboard />
-        <Form />
         <Header />
+        <Form 
+        // get={this.componentDidMount} 
+        />
+        <Dashboard inventory={this.state.inventory} 
+        // get={this.componentDidMount} 
+        />
 
       </div>
     );

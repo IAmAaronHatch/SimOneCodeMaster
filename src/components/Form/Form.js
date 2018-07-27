@@ -2,8 +2,8 @@ import React, { Component } from 'react'
 import axios from 'axios'
 
 class Form extends Component {
-    constructor() {
-        super()
+    constructor(props) {
+        super(props)
 
         this.state = {
             image: '',
@@ -11,6 +11,14 @@ class Form extends Component {
             price: 0,
             userInput: ''
         }
+    }
+
+    addInventory = () => {
+        axios.post('/api/inventory').then(results=> {
+            this.setState({
+
+            })
+        })
     }
 
     handleImage = (e) => {
