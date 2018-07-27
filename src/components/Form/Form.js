@@ -9,17 +9,17 @@ class Form extends Component {
             image: '',
             name: '',
             price: 0,
-            userInput: ''
+            inventory: [],
         }
     }
 
-    addInventory = () => {
-        axios.post('/api/inventory').then(results=> {
-            this.setState({
+    // addInventory = () => {
+    //     axios.post('/api/inventory').then(results=> {
+    //         this.setState({
 
-            })
-        })
-    }
+    //         })
+    //     })
+    // }
 
     handleImage = (e) => {
         this.setState({
@@ -39,22 +39,27 @@ class Form extends Component {
         })
     }
 
+    
+
     addProduct = () => {
-        const { image, name, price } = this.state
-        const newProduct = { image, name, price }
-        axios.post('/api/inventory', newProduct).then(results => {
-            this.props.updateInventory(results.data)
-        })
+       const {image, name, price} = this.state
+       const newProduct = {image, name, price}
+       axios.post('/api/students', newProduct).then(results => {
+           this.props.updateInventory()
+       })
     }
 
     handleCancel = (e) => {
         this.setState({
-            userInput: ''
+            image: '',
+            name: '',
+            price: ''
         })
     }
 
 
     render() {
+        console.log('1111212121212112', this.props)
         return (
             <div>
                 FORM!!!

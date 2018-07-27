@@ -15,8 +15,8 @@ massive ( process.env.CONNECTION_STRING ).then( db => {
 
 app.get('/api/inventory', controller.getProducts )
 app.post('/api/inventory', controller.addProducts )
-//app.put('/', )
-//app.delete('/', )
+app.put('/api/inventory/:id', controller.updateProducts )
+app.delete('/api/inventory/:id', controller.deleteProducts )
 
 
 

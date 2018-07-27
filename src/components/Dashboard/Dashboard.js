@@ -1,20 +1,25 @@
 import React, { Component } from 'react'
 // import axios from 'axios'
-
 import Product from '../Product/Product'
 
 class Dashboard extends Component {
-    constructor(props) {
-        super(props)
-    }
     render() {
-        // console.log("state",this.props)
+        let mappedInventory = this.props.inventory.map( (e, i) => {
+            return (
+                <div key={i}>
+                    <Product 
+                        id={e.id}
+                        name={e.name}
+                        price={e.price}
+                        image={e.image}
+                        />
+                </div>
+            )
+        })
         return (
             <div>
-                Dashboard!!
-                {this.props.inventory.map((e, i) => {
-                    return <Product name={e.name} price={e.price} image={e.image} />
-                })}
+                <p>Dashboard!</p>
+                {mappedInventory}
             </div>
         )
     }
